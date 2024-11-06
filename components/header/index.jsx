@@ -23,16 +23,9 @@ function Header() {
 					<div className="menu-block-wrapper">
 						<DesktopNav>
 							<NavItem url="/">Home</NavItem>
-							<NavItem url="about-us">About Us</NavItem>
-							<NavItem url="portfolio-two">Portfolio</NavItem>
-							<NavItem dropdown title="Blog">
-								<Dropdown>
-									<DropdownItem url="blog">Our Blog</DropdownItem>
-									<DropdownItem url="blog-grid">Blog Grid</DropdownItem>
-									<DropdownItem url="single-blog">Blog Details</DropdownItem>
-								</Dropdown>
-							</NavItem>
-							<NavItem url="contact-us">Contact Us</NavItem>
+							<NavItem>About Us</NavItem>
+							<NavItem>Portfolio</NavItem>							
+							<NavItem>Contact Us</NavItem>
 						</DesktopNav>
 					</div>
 					<HeaderButton setShowSideMenu={setShowSideMenu} />
