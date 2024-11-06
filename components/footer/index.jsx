@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import LogoWhiteImg from "../../public/images/logo/logo-white.svg";
+import LogoWhiteImg from "../../public/images/logo/logo-footer.png";
 import FooterCopyright from "./FooterCopyright";
 import FooterSubscription from "./FooterSubscription";
 function Footer() {
@@ -18,7 +18,7 @@ function Footer() {
 						<div className="col-xl-4 col-lg-12">
 							<div className="aximo-footer-textarea light-one">
 								<Link href="/">
-									<Image src={LogoWhiteImg} alt="Logo" sizes="100vw" />
+									<Image src={LogoWhiteImg} alt="Logo" sizes="100vw" width="100" />
 								</Link>
 								<p>
 									We are a branding agency that digitally works to help companies grow. We have a

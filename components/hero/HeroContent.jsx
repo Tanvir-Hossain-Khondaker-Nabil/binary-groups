@@ -2,19 +2,18 @@ import { FadeInStaggerTwo, FadeInStaggerTwoChildren } from "@/components/animati
 import Image from "next/image";
 import Link from "next/link";
 import RoundShapeImg from "../../public/images/v4/round-shape.png";
-function HeroContent() {
+function HeroContent({ sliderData }) {
 	return (
 		<FadeInStaggerTwo className="aximo-hero-content4">
 			<FadeInStaggerTwoChildren>
 				<p>
-					<span>Your trusted business consultants</span>
+					<span>{sliderData.sub_title}</span>
 				</p>
 			</FadeInStaggerTwoChildren>
 			<FadeInStaggerTwoChildren>
 				<h1>
-					Transforming your ideas into
+					{sliderData.primary_title}
 					<span className="aximo-hero-shape-title">
-						experiences
 						<span className="aximo-hero-round-shape">
 							<Image src={RoundShapeImg} alt="RoundShapeImg" sizes="100vw" />
 						</span>
@@ -23,16 +22,15 @@ function HeroContent() {
 			</FadeInStaggerTwoChildren>
 			<FadeInStaggerTwoChildren>
 				<p>
-					We&apos;re dedicated to helping businesses grow and succeed. With years of industry experience and a
-					passion for problem-solving, we offer top-level consulting services tailored to your unique needs.
+					{sliderData.description}
 				</p>
 			</FadeInStaggerTwoChildren>
 			<FadeInStaggerTwoChildren className="aximo-hero-btn-wrap">
-				<Link className="aximo-default-btn pill blue-btn" href="/contact-us">
-					Schedule a meeting
+				<Link className="aximo-default-btn pill blue-btn" href='/contact-us'>
+					{sliderData.first_button_text}
 				</Link>
 				<Link className="aximo-default-btn aximo-default-btn-outline pill outline-white" href="/portfolio-one">
-					<span className="aximo-label-up">View all projects</span>
+					<span className="aximo-label-up">{sliderData.second_button_text}</span>
 					<span className="aximo-label-up">View all projects</span>
 				</Link>
 			</FadeInStaggerTwoChildren>

@@ -1,79 +1,87 @@
-import FadeInStagger from "@/components/animation/FadeInStagger";
-import Link from "next/link";
-import ServiceCard from "./ServiceCard";
+"use client"; 
 
-const serviceData = [
-	{
-		id: crypto.randomUUID(),
-		title: "Strategic Planning",
-		description:
-			"Actionable strategies that align with your business objectives, ensuring you're on the path to success.",
-		iconClass: "icon-idea-bulb",
-	},
-	{
-		id: crypto.randomUUID(),
-		title: "Operational Excellence",
-		description:
-			"We optimize your processes & work improve efficiency, and reduce costs to enhance overall performance.",
-		iconClass: "icon-project-management",
-	},
-	{
-		id: crypto.randomUUID(),
-		title: "Financial Advisory",
-		description:
-			"Our experts provide financial guide, help manage investments, & risk to ensure your financial health.",
-		iconClass: "icon-start-up",
-	},
-	{
-		id: crypto.randomUUID(),
-		title: "Technology Solutions",
-		description:
-			"We offer IT consulting to guide new technology adoption for enhance all cybersecurity for your business.",
-		iconClass: "icon-database",
-	},
-	{
-		id: crypto.randomUUID(),
-		title: "Marketing and Sales",
-		description: "We help you develop effective and boost brand visibility to connect with your target audience.",
-		iconClass: "icon-data-analysis-1",
-	},
-	{
-		id: crypto.randomUUID(),
-		title: "Specialized Expertise",
-		description:
-			"With industry-specific knowledge, we provide tailored solutions for all sectors like healthcare, finance.",
-		iconClass: "icon-client-support",
-	},
-];
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image"; 
+import ArrowRightImg from "../../public/images/icon/arrow-right.svg";
+import Star2Img from "../../public/images/v1/star2.png";
+import { useEffect, useState } from "react";
+import URL from "@/components/Url.js";
+
 function Services() {
-	return (
-		<div className="section aximo-section-padding3 position-relative">
-			<div className="container">
-				<div className="aximo-section-title arimo-font">
-					<div className="row">
-						<div className="col-lg-7">
-							<span className="aximo-subtitle">Our amazing services</span>
-							<h2>We provide various essential services</h2>
-						</div>
-						<div className="col-lg-5 d-flex align-items-end justify-content-end">
-							<div className="aximo-title-btn">
-								<Link className="aximo-default-btn pill blue-btn" href="/service">
-									View all services
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					{serviceData.map((service, index) => (
-						<FadeInStagger key={service.id} index={index} className="col-xl-4 col-lg-6">
-							<ServiceCard service={service} />
-						</FadeInStagger>
-					))}
-				</div>
-			</div>
-		</div>
-	);
+    const [serviceData, setServiceData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchServiceData = async () => {
+            try {
+                const response = await fetch(`${URL}/api/service_detail`);
+                if (!response.ok) throw new Error("Network response was not ok");
+                const data = await response.json();
+                setServiceData(Array.isArray(data) ? data : [data]);
+            } catch (error) {
+                console.error("Error fetching service data:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchServiceData();
+    }, []);
+
+    if (loading) return <div>Loading...</div>;
+    if (!serviceData.length) return <div>No service data available.</div>;
+
+    return (
+        <div className="section aximo-section-padding4">
+            <div className="container">
+                <div className="aximo-section-title center">
+                    <h2>
+                        Seasoned Solutions:
+                        <span className="aximo-title-animation">
+                            Our Expert Services
+                            <span className="aximo-title-icon">
+                                <Image src={Star2Img} alt="Star" />
+                            </span>
+                        </span>
+                    </h2>
+                </div>
+                <div className="aximo-service-wrap">
+                    <div className="row">
+                        {serviceData.map((service, index) => (
+                            <motion.div
+                                key={service.id}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.5 }}
+                                className="col-xl-4 col-lg-6"
+                            >
+                                <div className="aximo-iconbox-wrap4">
+                                    <div className="aximo-iconbox-icon4">
+                                        {service.service_logo ? (
+                                            <Image
+                                                src={`${URL}/${service.service_logo.replace(/\\/g, '/')}`}
+                                                alt={service.service_title}
+                                                width={80}
+                                                height={80}
+                                            />
+                                        ) : <div>No Image Available</div>}
+                                    </div>
+                                    <div className="aximo-iconbox-data4">
+                                        <h3>{service.service_title}</h3>
+                                        <p>{service.primary_description}</p>
+                                        <Link href={`/single-service/${service.id}`} className="aximo-icon">
+                                            <Image src={ArrowRightImg} alt="arrow right" />
+                                        </Link>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Services;

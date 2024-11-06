@@ -1,2 +1,2 @@
-const URL = "https://binary-group.rcreationbd.com";  // Make sure this is correct
+const URL = "http://binary_echos.test";  // Make sure this is correct
 export default URL;
