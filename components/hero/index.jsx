@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import HeroContent from "./HeroContent";
 import HeroVideo from "./HeroVideo";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function Hero() {
     const [sliderData, setSliderData] = useState(null);

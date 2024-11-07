@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
 import LinkImg from "../../public/images/v4/link.svg";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function Projects() {
     const [projectData, setProjectData] = useState([]); // Ensure it's an array

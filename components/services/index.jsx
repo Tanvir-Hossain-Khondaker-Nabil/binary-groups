@@ -6,7 +6,7 @@ import Image from "next/image";
 import ArrowRightImg from "../../public/images/icon/arrow-right.svg";
 import Star2Img from "../../public/images/v1/star2.png";
 import { useEffect, useState } from "react";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function Services() {
     const [serviceData, setServiceData] = useState([]);
