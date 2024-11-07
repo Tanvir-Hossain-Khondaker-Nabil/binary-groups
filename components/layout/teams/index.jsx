@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import FadeInStagger from "@/components/animation/FadeInStagger";
 import Image from "next/image";
 import Star2Img from "../../../public/images/v1/star2.png";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function Teams() {
     const [teams, setTeams] = useState([]);

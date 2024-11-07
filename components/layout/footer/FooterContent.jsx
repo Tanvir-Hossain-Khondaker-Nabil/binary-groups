@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Shape1Img from "../../../public/images/v1/shape1.png";
 import Star2Img from "../../../public/images/v1/star2.png";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function FooterContent() {
     const [footerData, setFooter] = useState(null);

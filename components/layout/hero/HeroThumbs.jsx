@@ -1,6 +1,6 @@
 import FadeInRight from "@/components/animation/FadeInRight";
 import Image from "next/image";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function HeroThumbs({ sliderData }) {
     return (

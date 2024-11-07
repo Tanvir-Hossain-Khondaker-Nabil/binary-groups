@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Accordion from "./Accordion";
 import Content from "./Content";
-import URL from "@/components/Url.js"; // Import URL from the url.js file
+import URL from "@/components/URL.js"; // Import URL from the url.js file
 function WhyChooseUs() {
 	const [workingProcessData, setWorkingProcess] = useState(null);
 

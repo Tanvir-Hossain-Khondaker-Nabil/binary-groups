@@ -5,7 +5,7 @@ import { Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Star2Img from "../../../public/images/v1/star2.png";
 import Link from "next/link";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function Projects() {
     const [projectData, setProjectData] = useState([]); // Ensure it's an array

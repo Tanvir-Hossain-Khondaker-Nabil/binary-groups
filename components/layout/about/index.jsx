@@ -4,7 +4,7 @@ import Image from "next/image";
 import Star2Img from "../../../public/images/v1/star2.png";
 import AboutCounter from "./AboutCounter";
 import Video from "./Video";
-import URL from "@/components/Url.js"; // Import URL from the url.js file
+import URL from "@/components/URL.js"; // Import URL from the url.js file
 
 function About() {
     const [introData, setIntroData] = useState(null);

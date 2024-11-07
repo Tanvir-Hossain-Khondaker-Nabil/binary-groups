@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
 import PlayBtnImg from "../../../public/images/v1/play-btn.svg";
-import URL from "@/components/Url.js";
+import URL from "@/components/URL.js";
 
 function Video({ photo, youtubeUrl }) {
     const [isOpen, setOpen] = useState(false);
