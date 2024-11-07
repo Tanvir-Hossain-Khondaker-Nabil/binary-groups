@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
-import ArrowRight3Img from "../../../public/images/icon/arrow-right3.svg";
+import ArrowRight3Img from "../../public/images/icon/arrow-right3.svg";
 import Field from "../../common/Field";
 import URL from "@/components/URL.js"; 
 function MessageForm() {

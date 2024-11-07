@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Star3Img from "../../../public/images/v1/star3.png";
+import Star3Img from "../../public/images/v1/star3.png";
 
 const sliderData = [
 	{

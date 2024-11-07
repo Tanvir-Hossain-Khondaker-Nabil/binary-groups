@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Star2Img from "../../../public/images/v1/star2.png";
+import Star2Img from "../../public/images/v1/star2.png";
 import Link from "next/link";
 import URL from "@/components/URL.js";
 

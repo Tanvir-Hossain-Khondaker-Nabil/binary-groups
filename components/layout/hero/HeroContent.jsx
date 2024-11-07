@@ -1,8 +1,8 @@
 import { FadeInStaggerTwo, FadeInStaggerTwoChildren } from "@/components/animation/FadeInStaggerTwo";
 import Image from "next/image";
 import Link from "next/link";
-import StarImg from "../../../public/images/v1/star.png";
-import ShapeImg from "../../../public/images/v1/shape1.png";
+import StarImg from "../../public/images/v1/star.png";
+import ShapeImg from "../../public/images/v1/shape1.png";
 import URL from "@/components/URL.js";
 
 function HeroContent({ sliderData }) {

@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import ArrowRightImg from "../../../public/images/icon/arrow-right.svg";
+import ArrowRightImg from "../../public/images/icon/arrow-right.svg";
 import { useEffect, useState } from "react";
 import FadeInStagger from "@/components/animation/FadeInStagger";
-import Star2Img from "../../../public/images/v1/star2.png";
+import Star2Img from "../../public/images/v1/star2.png";
 import URL from "@/components/URL.js";
 
 function Services() {
