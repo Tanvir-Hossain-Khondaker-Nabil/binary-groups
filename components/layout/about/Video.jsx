@@ -3,7 +3,7 @@ import FadeInUp from "@/components/animation/FadeInUp";
 import Image from "next/image";
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-import PlayBtnImg from "../../../public/images/v1/play-btn.svg";
+import PlayBtnImg from "../../public/images/v1/play-btn.svg";
 import URL from "@/components/URL.js";
 
 function Video({ photo, youtubeUrl }) {

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Star2Img from "../../../public/images/v1/star2.png";
+import Star2Img from "../../public/images/v1/star2.png";
 import AboutCounter from "./AboutCounter";
 import Video from "./Video";
 import URL from "@/components/URL.js"; // Import URL from the url.js file
