@@ -399,14 +399,14 @@ h6,
 
 h1,
 .h1 {
-	font-size: 104px;
+	font-size: 63px;
 	letter-spacing: -1px;
 	line-height: 1em;
 }
 @media (max-width: 1400px) {
 	h1,
 	.h1 {
-		font-size: 70px;
+		font-size: 63px;
 	}
 }
 @media (max-width: 767px) {
@@ -418,14 +418,14 @@ h1,
 
 h2,
 .h2 {
-	font-size: 70px;
+	font-size: 64px;
 	line-height: 1.07em; /* 116.667% */
 	letter-spacing: -0.7px;
 }
 @media (max-width: 1199px) {
 	h2,
 	.h2 {
-		font-size: 48px;
+		font-size: 64px;
 	}
 }
 @media (max-width: 767px) {
@@ -3292,12 +3292,12 @@ button#aximo-submit-btn2:hover .aximo-label-up {
 
 .aximo-breadcrumb {
 	text-align: center;
-	padding: 195px 0 130px;
+	padding: 160px 0 40px;
 	background-color: var(--dark-bg);
 }
 @media (max-width: 991px) {
 	.aximo-breadcrumb {
-		padding: 170px 0 100px;
+		padding: 162px 0 43px;
 	}
 }
 @media (max-width: 767px) {
@@ -3410,8 +3410,9 @@ h1.post__title {
 }
 
 .aximo-hero-section {
-	padding: 200px 0 135px;
+    padding: 150px 0 100px;
 }
+
 @media (max-width: 991px) {
 	.aximo-hero-section {
 		padding: 170px 0 100px;
@@ -8250,7 +8251,7 @@ a.aximo-connect-login img {
 }
 
 .aximo-section-padding {
-	padding: 125px 0 130px;
+    padding: 60px 0 60px;
 }
 @media (max-width: 991px) {
 	.aximo-section-padding {

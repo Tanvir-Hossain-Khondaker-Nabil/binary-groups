@@ -49,33 +49,34 @@ function Services() {
                 <div className="aximo-service-wrap">
                     <div className="row">
                         {serviceData.map((service, index) => (
-                            <motion.div
+                            <div className="col-md-6">
+                                <motion.div
                                 key={service.id}
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.5 }}
-                                className="col-xl-4 col-lg-6"
                             >
-                                <div className="aximo-iconbox-wrap4">
-                                    <div className="aximo-iconbox-icon4">
-                                        {service.service_logo ? (
-                                            <Image
-                                                src={`${URL}/${service.service_logo.replace(/\\/g, '/')}`}
-                                                alt={service.service_title}
-                                                width={80}
-                                                height={80}
-                                            />
-                                        ) : <div>No Image Available</div>}
+                                    <div className="aximo-iconbox-wrap4">
+                                        <div className="aximo-iconbox-icon4">
+                                            {service.service_logo ? (
+                                                <Image
+                                                    src={`${URL}/${service.service_logo.replace(/\\/g, '/')}`}
+                                                    alt={service.service_title}
+                                                    width={80}
+                                                    height={80}
+                                                />
+                                            ) : <div>No Image Available</div>}
+                                        </div>
+                                        <div className="aximo-iconbox-data4">
+                                            <h3>{service.service_title}</h3>
+                                            <p>{service.primary_description}</p>
+                                            <Link href={`/single-service/${service.id}`} className="aximo-icon">
+                                                <Image src={ArrowRightImg} alt="arrow right" />
+                                            </Link>
+                                        </div>
                                     </div>
-                                    <div className="aximo-iconbox-data4">
-                                        <h3>{service.service_title}</h3>
-                                        <p>{service.primary_description}</p>
-                                        <Link href={`/single-service/${service.id}`} className="aximo-icon">
-                                            <Image src={ArrowRightImg} alt="arrow right" />
-                                        </Link>
-                                    </div>
-                                </div>
-                            </motion.div>
+                                </motion.div>
+                            </div>                            
                         ))}
                     </div>
                 </div>

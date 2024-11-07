@@ -20,8 +20,8 @@ function HomeFour() {
 			<NumberBox />
 			<Projects />
 			<Testimonials />
-			<Blogs />
-			<Instagrams />
+			{/*<Blogs />
+			<Instagrams />*/}
 		</div>
 	);
 }

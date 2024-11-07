@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Star2Img from "../../public/images/v1/star2.png";
+import Star2Img from "../../../public/images/v1/star2.png";
 import StoryContent from "./StoryContent";
 import StoryPhotos from "./StoryPhotos";
 function Story() {
