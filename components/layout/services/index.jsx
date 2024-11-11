@@ -9,9 +9,6 @@ import FadeInStagger from "@/components/animation/FadeInStagger";
 import Star2Img from "../../../public/images/v1/star2.png";
 import URL from "@/components/URL.js";
 
-// Placeholder for missing service logo
-import DefaultServiceLogo from "../../../public/images/icon/default-service-logo.png";
-
 function Services() {
   const [serviceData, setServiceData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -33,8 +30,7 @@ function Services() {
     fetchServiceData();
   }, []);
 
-  // Loading spinner
-  if (loading) return <div className="loading-spinner">Loading...</div>;
+  if (loading) return <div>Loading...</div>;
   if (!serviceData.length) return <div>No service data available.</div>;
 
   return (
@@ -54,7 +50,7 @@ function Services() {
         <div className="aximo-service-wrap">
           <div className="row">
             {serviceData.map((service) => (
-              <div key={service.id} className="col-md-6">
+              <div className="col-md-6">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -72,13 +68,7 @@ function Services() {
                         style={{ borderRadius: "10px" }}
                       />
                     ) : (
-                      <Image
-                        src={DefaultServiceLogo}
-                        alt="Default Service Logo"
-                        width={80}
-                        height={80}
-                        style={{ borderRadius: "10px", objectFit: "cover" }}
-                      />
+                      <div>No Image Available</div>
                     )}
                   </div>
                   <div className="aximo-iconbox-data">
