@@ -3,7 +3,7 @@ import Image from "next/image";
 import Portfolio2Img from "../../../public/images/portfolio/p_10.png";
 import Portfolio3Img from "../../../public/images/portfolio/p_11.png";
 import Portfolio1Img from "../../../public/images/portfolio/p_9.png";
-import Star2Img from "../../../public/images/v1/star2.png";
+import Star2Img from "../../public/images/v1/star2.png";
 import PortfolioCard from "./PortfolioCard";
 const portfolioListData = [
 	{

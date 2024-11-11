@@ -1,9 +1,9 @@
 import FadeInRight from "@/components/animation/FadeInRight";
 import FadeInUp from "@/components/animation/FadeInUp";
 import Image from "next/image";
-import Single1Img from "../../../public/images/portfolio/p_single.png";
-import Single2Img from "../../../public/images/portfolio/p_single2.png";
-import Star2Img from "../../../public/images/v1/star2.png";
+import Single1Img from "../../public/images/portfolio/p_single.png";
+import Single2Img from "../../public/images/portfolio/p_single2.png";
+import Star2Img from "../../public/images/v1/star2.png";
 const projectResolveSteps = [
 	{
 		id: crypto.randomUUID(),

@@ -6,8 +6,8 @@ import Projects from "@/components/layout/projects";
 import FadeInRight from "@/components/animation/FadeInRight";
 import FadeInUp from "@/components/animation/FadeInUp";
 import Image from "next/image";
-import Star2Img from "../../../public/images/v1/star2.png";
-import URL from "@/components/Url.js";
+import Star2Img from "../../public/images/v1/star2.png";
+import URL from "@/components/URL.js";
 
 function SinglePortfolio() {
     const [portfolioData, setPortfolioData] = useState(null);
