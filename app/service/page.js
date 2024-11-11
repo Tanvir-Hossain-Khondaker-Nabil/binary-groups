@@ -1,5 +1,4 @@
 import BreadCrumb from "@/components/common/Breadcrumb";
-import TwoColumnFaq from "@/components/layout/contact/TwoColumnFaq";
 import Services from "@/components/layout/services";
 import WhyChooseUs from "@/components/layout/why-choose-us";
 const services = [
@@ -66,7 +65,6 @@ function ServicePage() {
 			<BreadCrumb title="Service" />
 			<Services services={services} />
 			<WhyChooseUs />
-			<TwoColumnFaq />
 		</>
 	);
 }
