@@ -5,7 +5,7 @@ import ContactThumb from "../../public/images/contact/contact-thumb.png";
 import Star2Img from "../../public/images/v1/star2.png";
 import FadeInRight from "../animation/FadeInRight";
 import Field from "../common/Field";
-import URL from "@/components/Url.js"; 
+import URL from "@/components/URL.js"; 
 function ContactForm() {
 	const {
 		register,

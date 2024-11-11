@@ -5,7 +5,7 @@ import Image from "next/image";
 import FadeInRight from "@/components/animation/FadeInRight"; // Adjust the path if necessary
 import FadeInUp from "@/components/animation/FadeInUp"; // Adjust the path if necessary
 import URL from "@/components/URL.js"; // Adjust the path if necessary
-import Star2Img from "../../public/images/v1/star2.png"; // Adjust the path if necessary
+import Star2Img from "../../../public/images/v1/star2.png"; // Adjust the path if necessary
 
 function ServiceDetails() {
   const [serviceData, setServiceData] = useState(null);
