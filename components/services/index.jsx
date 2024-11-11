@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -48,14 +48,13 @@ function Services() {
                 </div>
                 <div className="aximo-service-wrap">
                     <div className="row">
-                        {serviceData.map((service, index) => (
-                            <div className="col-md-6">
+                        {serviceData.map((service) => (
+                            <div key={service.id} className="col-md-6">
                                 <motion.div
-                                key={service.id}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5 }}
-                            >
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.5 }}
+                                >
                                     <div className="aximo-iconbox-wrap4">
                                         <div className="aximo-iconbox-icon4">
                                             {service.service_logo ? (

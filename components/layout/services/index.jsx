@@ -50,7 +50,7 @@ function Services() {
         <div className="aximo-service-wrap">
           <div className="row">
             {serviceData.map((service) => (
-              <div className="col-md-6">
+              <div key={service.id} className="col-md-6">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
