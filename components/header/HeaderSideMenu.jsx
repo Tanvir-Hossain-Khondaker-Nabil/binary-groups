@@ -1,43 +1,78 @@
 "use client";
+import { useEffect, useState } from "react";
 import { FadeInStaggerTwo, FadeInStaggerTwoChildren } from "@/components/animation/FadeInStaggerTwo";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/images/logo/logo-white.svg";
 import InstagramThumb from "../../public/images/v4/instagram-thumb3.png";
+import LogoWhiteImg from "../../public/images/logo/logo-footer.png";
+import URL from "@/components/URL.js";
 function HeaderSideMenu({ showSideMenu, setShowSideMenu }) {
+	const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+	const currentYear = new Date().getFullYear();
+    // Fetch data from the API on component mount
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${URL}/api/footer_content`);
+                if (!response.ok) {
+                    throw new Error("Failed to fetch data");
+                }
+                const result = await response.json();
+                setData(result);
+                setLoading(false);
+            } catch (err) {
+                setError("Failed to fetch data.");
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    // If data is still loading
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    // If there's an error fetching data
+    if (error) {
+        return <div>{error}</div>;
+    }
+
 	return (
 		<div className="aximo-sidemenu-wraper">
 			<div className={`aximo-sidemenu-column ${showSideMenu === true ? "active" : ""}`}>
 				<FadeInStaggerTwo className="aximo-sidemenu-body">
 					<FadeInStaggerTwoChildren className="aximo-sidemenu-logo">
 						<Link href="/">
-							<Image src={Logo} alt="Logo" sizes="100vw" />
+							<Image src={LogoWhiteImg} alt="Logo" sizes="100vw" style={{ width: '100px'}} />
 						</Link>
 					</FadeInStaggerTwoChildren>
 					<FadeInStaggerTwoChildren>
 						<p>
-							We&apos;re dedicated to helping business grow and succeed. With years of industry experience
-							and a passion for problem-solving, we offer top-level consulting service tailored to your
-							unique needs.
+						{data.description}
 						</p>
 					</FadeInStaggerTwoChildren>
 					<FadeInStaggerTwoChildren className="aximo-sidemenu-thumb">
-						<Image src={InstagramThumb} alt="InstagramThumb" />
+						<Image src={`${URL}/${data.photo}`} alt="InstagramThumb" height="100" width="500"/>
 					</FadeInStaggerTwoChildren>
 					<FadeInStaggerTwoChildren className="aximo-info-wrap">
 						<div className="aximo-info">
 							<ul>
-								<li>Give us a call:</li>
+								<li>{data.mobile_title}:</li>
 								<li>
-									<a href="tel:1234567890">(123) 456-7890</a>
+									<a href="tel:1234567890">{data.mobile_number}</a>
 								</li>
 							</ul>
 						</div>
 						<div className="aximo-info">
 							<ul>
-								<li>Send us an email:</li>
+								<li>{data.email_title}:</li>
 								<li>
-									<a href="mailto:info@mthemeus.com">info@mthemeus.com</a>
+									<a href="mailto:info@mthemeus.com">{data.email_number}</a>
 								</li>
 							</ul>
 						</div>
@@ -45,29 +80,29 @@ function HeaderSideMenu({ showSideMenu, setShowSideMenu }) {
 					<FadeInStaggerTwoChildren className="aximo-social-icon aximo-social-icon3">
 						<ul>
 							<li>
-								<a href="https://twitter.com" target="_blank">
+								<a href={`${data.footer_twitter_url}`} target="_blank">
 									<i className="icon-twitter"></i>
 								</a>
 							</li>
 							<li>
-								<a href="https://facebook.com" target="_blank">
+								<a href={`${data.footer_facebook_url}`} target="_blank">
 									<i className="icon-facebook"></i>
 								</a>
 							</li>
 							<li>
-								<a href="https://instagram.com" target="_blank">
+								<a href={`${data.footer_instagram_url}`} target="_blank">
 									<i className="icon-instagram"></i>
 								</a>
 							</li>
 							<li>
-								<a href="https://linkedin.com" target="_blank">
+								<a href={`${data.footer_linkedin_url}`} target="_blank">
 									<i className="icon-linkedin"></i>
 								</a>
 							</li>
 						</ul>
 					</FadeInStaggerTwoChildren>
 					<FadeInStaggerTwoChildren className="aximo-copywright4 light">
-						<p>© Copyright 2024, All Rights Reserved by Mthemeus</p>
+						<p>© Copyright {currentYear}, All Rights Reserved by Binary Group</p>
 					</FadeInStaggerTwoChildren>
 				</FadeInStaggerTwo>
 				<span className="aximo-sidemenu-close" onClick={() => setShowSideMenu(!showSideMenu)}>
