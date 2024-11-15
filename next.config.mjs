@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      domains: ['binary-group.rcreationbd.com.test'], // Ensure this matches your image URL
+      domains: ['binary-group.rcreationbd.com'], // Ensure this matches your image URL
     },
   };
   
