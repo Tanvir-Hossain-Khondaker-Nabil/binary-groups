@@ -34,7 +34,7 @@ function ServiceDetails() {
     fetchServiceData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div></div>;
   if (!serviceData) return <div>No service data available.</div>;
 
   return (<>

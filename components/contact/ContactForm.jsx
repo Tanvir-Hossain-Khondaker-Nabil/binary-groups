@@ -1,17 +1,21 @@
 "use client";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import ContactThumb from "../../public/images/contact/contact-thumb.png";
 import Star2Img from "../../public/images/v1/star2.png";
 import FadeInRight from "../animation/FadeInRight";
 import Field from "../common/Field";
-import URL from "@/components/URL.js"; 
+import URL from "@/components/URL.js";
+
 function ContactForm() {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm();
+	const [successMessage, setSuccessMessage] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
 
 	const submitForm = async (formData) => {
 		console.log("Submitting Form Data = ", formData);
@@ -30,10 +34,13 @@ function ContactForm() {
 
 			const result = await response.json();
 			console.log("Response from server:", result);
-			// Handle success (e.g., show a success message or reset form)
+			// Show success message
+			setSuccessMessage("Your message has been sent successfully. We'll get back to you shortly.");
+			setErrorMessage(""); // Clear error message if submission is successful
 		} catch (error) {
 			console.error("Error submitting form:", error);
-			// Handle error (e.g., show an error message)
+			setErrorMessage("Something went wrong. Please try again.");
+			setSuccessMessage(""); // Clear success message on error
 		}
 	};
 
@@ -58,9 +65,9 @@ function ContactForm() {
 
 				<div className="row">
 					<div className="col-lg-5 order-lg-2">
-						{/*<FadeInRight className="aximo-contact-thumb">
+						{/* <FadeInRight className="aximo-contact-thumb">
 							<Image src={ContactThumb} alt="Contact Thumb" />
-						</FadeInRight>*/}
+						</FadeInRight> */}
 					</div>
 					<div className="col-lg-12">
 						<div className="aximo-main-form">
@@ -107,6 +114,12 @@ function ContactForm() {
 									Send Message
 								</button>
 							</form>
+							
+							{/* Success Message */}
+							{successMessage && <p className="success-message">{successMessage}</p>}
+
+							{/* Error Message */}
+							{errorMessage && <p className="error-message">{errorMessage}</p>}
 						</div>
 					</div>
 				</div>

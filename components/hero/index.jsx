@@ -29,7 +29,7 @@ function Hero() {
         fetchSliderData();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div></div>;
     if (error) return <div>{error}</div>;
 
     return (

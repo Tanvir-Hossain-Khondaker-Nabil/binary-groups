@@ -44,7 +44,7 @@ function Teams() {
         fetchTeamMembers();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div></div>;
 
     return (
         <div className="section aximo-section-padding3">

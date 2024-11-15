@@ -30,7 +30,7 @@ function NumberBox() {
 
     // If data is still loading
     if (loading) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     // If there's an error fetching data

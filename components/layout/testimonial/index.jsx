@@ -45,7 +45,7 @@ function Testimonial() {
     fetchReviewContentData();
   }, []); // Empty dependency array means this effect runs only once when the component mounts.
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div></div>;
   if (!reviewData) return <div>No portfolio data available.</div>;
 
   // Transforming reviewContentData into the format used in testimonialsData

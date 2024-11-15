@@ -1,148 +1,87 @@
 "use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import Brand1Img from "../../public/images/v4/b_1.png";
-import Brand2Img from "../../public/images/v4/b_2.png";
-import Brand3Img from "../../public/images/v4/b_3.png";
-import Brand4Img from "../../public/images/v4/b_4.png";
-import Brand5Img from "../../public/images/v4/b_5.png";
-import Brand6Img from "../../public/images/v4/b_6.png";
-import Brand7Img from "../../public/images/v4/b_7.png";
-
-const sliderData = [
-	{
-		id: crypto.randomUUID(),
-		img: Brand1Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand2Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand3Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand4Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand5Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand6Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand7Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand1Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand2Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand3Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand4Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand5Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand6Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand7Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand1Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand2Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand3Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand4Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand5Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand6Img,
-	},
-	{
-		id: crypto.randomUUID(),
-		img: Brand7Img,
-	},
-];
+import URL from "@/components/URL.js"; // Adjust if necessary
 
 const swiperSettings = {
-	centeredSlides: true,
-	speed: 6000,
-	autoplay: {
-		delay: 1,
-	},
-	loop: true,
-	allowTouchMove: false,
-	modules: [Autoplay],
-	slidesPerView: 2,
-	breakpoints: {
-		768: {
-			slidesPerView: 3,
-		},
-		992: {
-			slidesPerView: 4,
-		},
-		1200: {
-			slidesPerView: 5,
-		},
-		1400: {
-			slidesPerView: 6,
-		},
-	},
+  centeredSlides: true,   // Ensures the slides are always centered
+  speed: 6000,
+  autoplay: {
+    delay: 1,
+  },
+  loop: true,
+  allowTouchMove: false,
+  modules: [Autoplay],
+  slidesPerView: 2,
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
+    },
+    992: {
+      slidesPerView: 4,
+    },
+    1200: {
+      slidesPerView: 5,
+    },
+    1400: {
+      slidesPerView: 6,
+    },
+  },
+  initialSlide: 0,  // Ensures the first slide starts in the center
 };
+
 function BrandLogo() {
-	return (
-		<div className="aximo-brandlogo-section2 extra-side-margin">
-			<div className="aximo-brandlogo-title">
-				<p>We help hundreds of companies to grow</p>
-			</div>
-			<div className="swiper aximo-auto-slider">
-				{
-					<Swiper {...swiperSettings}>
-						{sliderData.map((item) => (
-							<SwiperSlide key={item.id}>
-								<div className="aximo-brandlogo-item">
-									<Image src={item.img} alt="brand logo" sizes="100vw" />
-								</div>
-							</SwiperSlide>
-						))}
-					</Swiper>
-				}
-			</div>
-		</div>
-	);
+  const [logos, setLogos] = useState([]); // Store logo images
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLogos = async () => {
+      try {
+        const response = await fetch("http://binary-group.rcreationbd.com.test/api/logo_slider");
+        if (!response.ok) throw new Error("Failed to fetch logos");
+        const data = await response.json();
+
+        // Parse the 'photo' field which is a string of JSON
+        const parsedLogos = JSON.parse(data.photo);
+        setLogos(parsedLogos);
+      } catch (error) {
+        console.error("Error fetching logos:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLogos();
+  }, []);
+
+  if (loading) return <div></div>; // Show loading state if still fetching data
+
+  return (
+    <div className="aximo-brandlogo-section2 extra-side-margin">
+    <div className="aximo-brandlogo-title">
+        <p>We help hundreds of companies to grow</p>
+      </div>
+      <div className="swiper aximo-auto-slider">
+        <Swiper {...swiperSettings}>
+          {logos.map((logo, index) => (
+            <SwiperSlide key={index} >
+              <div className="aximo-brandlogo-item">
+                <Image
+                  src={`${URL}/${logo.replace(/\\/g, "/")}`} // Make sure to adjust the URL path
+                  alt={`Brand Logo ${index + 1}`}
+                  sizes="100vw"
+                  width={150} // Set your preferred width
+                  height={100} // Set your preferred height
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  );
 }
 
 export default BrandLogo;

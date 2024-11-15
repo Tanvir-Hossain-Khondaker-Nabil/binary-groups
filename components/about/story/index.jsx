@@ -4,7 +4,7 @@ import StoryContent from "./StoryContent";
 import StoryPhotos from "./StoryPhotos";
 function Story() {
 	return (
-		<div className="section aximo-section-padding6">
+		<div className="section aximo-section-padding6 mt-5">
 			<div className="container">
 				<div className="aximo-section-title center title-description">
 					<h2>
@@ -14,6 +14,7 @@ function Story() {
 								<Image src={Star2Img} alt="star" />
 							</span>
 						</span>
+						<br />
 						worth sharing with you
 					</h2>
 					<p>

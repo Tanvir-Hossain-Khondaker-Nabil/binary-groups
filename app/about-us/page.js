@@ -41,7 +41,7 @@ function AboutUs() {
 			<BreadCrumb title="About Us" />
 			<About />
 			<Story />
-			<Teams teams={teamsData} />
+			{/* <Teams teams={teamsData} /> */}
 		</>
 	);
 }

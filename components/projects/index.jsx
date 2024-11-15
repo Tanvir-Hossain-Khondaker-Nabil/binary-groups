@@ -50,7 +50,7 @@ function Projects() {
         },
     };
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div></div>;
     if (projectData.length === 0) return <div>No projects available.</div>;
 
     return (

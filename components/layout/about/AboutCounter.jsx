@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 function AboutCounter({ introData }) {
     // Check if introData is available
     if (!introData) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (

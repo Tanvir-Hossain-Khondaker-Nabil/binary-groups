@@ -39,7 +39,7 @@ function SinglePortfolio() {
         fetchPortfolioData();
     }, []);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <div></div>;
     if (!portfolioData) return <div>No portfolio data available.</div>;
 
     return (
