@@ -29,7 +29,7 @@ function HeroContent({ sliderData }) {
 				<Link className="aximo-default-btn pill blue-btn" href='/contact-us'>
 					{sliderData.first_button_text}
 				</Link>
-				<Link className="aximo-default-btn aximo-default-btn-outline pill outline-white" href="/portfolio-one">
+				<Link className="aximo-default-btn aximo-default-btn-outline pill outline-white" href="/portfolio-two">
 					<span className="aximo-label-up">{sliderData.second_button_text}</span>
 					<span className="aximo-label-up">View all projects</span>
 				</Link>

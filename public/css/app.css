@@ -7197,6 +7197,7 @@ img.aximo-video-circle {
 .aximo-project-thumb img {
 	transition: all 0.5s;
 	transform: scale(1);
+	height: 400px !important;
 }
 .aximo-project-thumb:hover img {
 	transform: scale(1.1);
