@@ -9171,9 +9171,14 @@ a.aximo-connect-login img {
 		margin-bottom: 55px;
 	}
 }
+
 @media (max-width: 767px) {
 	.aximo-service-details-thumb {
 		margin-bottom: 35px;
+		height: auto;
+	}
+	.aximo-project-single-thumb img{
+		height: 300px  !important;
 	}
 }
 
