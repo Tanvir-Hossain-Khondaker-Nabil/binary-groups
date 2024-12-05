@@ -29,12 +29,12 @@ function Story() {
 
   // If still loading, show a loading message
   if (loading) {
-    return <div></div>;
+    return <div>Loading...</div>;
   }
 
-  // If no data is fetched, show an error message
-  if (!storyData) {
-    return <div>Error loading story data.</div>;
+  // If no data is fetched or data is empty, return null or stop rendering the section
+  if (!storyData || Object.keys(storyData).length === 0) {
+    return null; // Stops rendering this component if no data is available
   }
 
   return (
