@@ -49,7 +49,7 @@ function WhyChooseUs() {
                     <div className="col-lg-5">
                         <FadeInLeft className="aximo-content-thumb border-radius">
                             <Image
-                                src={`${URL}/${data.photo}`} // Fallback to default image if no photo in API
+                                src={`${URL}/${data.photo.replace(/\\/g, '/')}`} // Fallback to default image if no photo in API
                                 alt="Thumbnail Image"
                                 sizes="100vw"
 								width="600"

@@ -39,7 +39,7 @@ function BrandLogo() {
   useEffect(() => {
     const fetchLogos = async () => {
       try {
-        const response = await fetch("https://binary-group.rcreationbd.com/api/logo_slider");
+        const response = await fetch("https://binaryinsurance.pt/admin/public/api/logo_slider");
         if (!response.ok) throw new Error("Failed to fetch logos");
         const data = await response.json();
 
