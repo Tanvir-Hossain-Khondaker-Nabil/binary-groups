@@ -91,7 +91,7 @@ function Testimonials() {
                                 </div>
                                 <div className="aximo-testimonial-author">
                                     <div className="aximo-testimonial-author-thumb">
-                                        <Image src={`${URL}/${data.first_review_photo}`} alt="Thumb1Img" sizes="100vw" width="50" height="50"/>
+                                        <Image src={`${URL}/${data.first_review_photo.replace(/\\/g, '/')}`} alt="Thumb1Img" sizes="100vw" width="50" height="50"/>
                                     </div>
                                     <div className="aximo-testimonial-author-data">
                                         <span>{data.first_review_name}</span>
@@ -128,7 +128,7 @@ function Testimonials() {
                                 </div>
                                 <div className="aximo-testimonial-author">
                                     <div className="aximo-testimonial-author-thumb">
-                                        <Image src={`${URL}/${data.second_review_photo}`} alt="Thumb2Img" sizes="100vw" width="50" height="50"/>
+                                        <Image src={`${URL}/${data.second_review_photo.replace(/\\/g, '/')}`} alt="Thumb2Img" sizes="100vw" width="50" height="50"/>
                                     </div>
                                     <div className="aximo-testimonial-author-data">
                                         <span>{data.second_review_name}</span>
