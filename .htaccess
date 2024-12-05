@@ -1,0 +1,17 @@
+# Redirect from old URL to new URL
+/old-path  /new-path  301
+
+# Redirect all HTTP traffic to HTTPS
+http://*  https://:splat  301
+
+# Custom 404 page
+/404.html  /404  200
+
+# Example of a rewrite rule (preserve URL, but handle differently in the backend)
+/api/*  /api/:splat  200
+
+# Redirect with query parameters
+/from-old-url?source=abc  /to-new-url?source=abc  301
+
+# Catch-all redirects for specific URLs
+/*  /index.html  200
