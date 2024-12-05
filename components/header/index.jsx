@@ -23,7 +23,7 @@ function Header() {
 					<div className="menu-block-wrapper">
 						<DesktopNav>
 							<NavItem url="/">Home</NavItem>
-							<NavItem url="about-us">About Us</NavItem>
+							{/* <NavItem url="about-us">About Us</NavItem> */}
 							<NavItem url="service">Service</NavItem>
 							<NavItem url="portfolio-two">Portfolio</NavItem>							
 							<NavItem url="contact-us">Contact Us</NavItem>
